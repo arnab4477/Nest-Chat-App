@@ -2,8 +2,8 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  JoinTable,
   OneToOne,
+  JoinColumn,
 } from 'typeorm';
 import { User } from './User.entity';
 
@@ -16,6 +16,6 @@ export class Message {
   message: string;
 
   @OneToOne(() => User)
-  @JoinTable()
+  @JoinColumn()
   sender: User;
 }
