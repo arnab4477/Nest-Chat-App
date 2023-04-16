@@ -45,6 +45,6 @@ export class AuthService {
       return null;
     }
 
-    return { user: { name: existingUser.name } };
+    return { user: { name: existingUser.name, id: existingUser.id } };
   }
 }

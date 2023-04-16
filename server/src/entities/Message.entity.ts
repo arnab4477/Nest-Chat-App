@@ -17,5 +17,5 @@ export class Message {
 
   @OneToOne(() => User)
   @JoinColumn()
-  sender: User;
+  sender: number;
 }
