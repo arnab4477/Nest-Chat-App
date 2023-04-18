@@ -1,9 +1,9 @@
 import { IsNotEmpty } from 'class-validator';
 
-export class CreateChatDto {
+export class CreateMessageDto {
   @IsNotEmpty()
-  message: string;
+  messageBody: string;
 
   @IsNotEmpty()
-  sender: number;
+  sender: string;
 }

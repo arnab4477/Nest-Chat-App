@@ -1,5 +1,5 @@
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
-import { UserAuthDto } from './dto/UserAuth';
+import { UserAuthDto } from 'src/dto';
 import * as bcrypt from 'bcrypt';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -14,6 +14,16 @@ export class AuthService {
   async createUser(user: UserAuthDto) {
     const { name, password } = user;
 
+    // Check if any user already exists with this name
+    const existingUser = await this.userRepository.findOne({
+      where: { name },
+    });
+
+    if (existingUser) {
+      console.log('duplicate error');
+      throw new HttpException('name already taken', HttpStatus.BAD_REQUEST);
+    }
+
     // Hash the password
     const passwordHash = await bcrypt.hash(password, 10);
 
@@ -22,7 +32,7 @@ export class AuthService {
     const savedUser = await this.userRepository.save(newUser);
 
     // Return the new users name and id after registration
-    return { user: { name: savedUser.name, id: savedUser.id } };
+    return { name: savedUser.name, id: savedUser.id };
   }
 
   async authenticateUser(user: UserAuthDto) {
@@ -45,6 +55,6 @@ export class AuthService {
       return null;
     }
 
-    return { user: { name: existingUser.name, id: existingUser.id } };
+    return { name: existingUser.name, id: existingUser.id };
   }
 }

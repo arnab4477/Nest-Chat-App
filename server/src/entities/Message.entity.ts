@@ -1,11 +1,4 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  OneToOne,
-  JoinColumn,
-} from 'typeorm';
-import { User } from './User.entity';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
 export class Message {
@@ -13,9 +6,8 @@ export class Message {
   id: number;
 
   @Column()
-  message: string;
+  messageBody: string;
 
-  @OneToOne(() => User)
-  @JoinColumn()
-  sender: number;
+  @Column()
+  sender: string;
 }

@@ -4,8 +4,7 @@ import {
   MessageBody,
   WebSocketServer,
 } from '@nestjs/websockets';
-import { ChatService } from './chat.service';
-import { CreateChatDto } from './dto/create-chat.dto';
+import { CreateMessageDto } from 'src/dto';
 import { Server } from 'socket.io';
 
 @WebSocketGateway({
@@ -17,14 +16,8 @@ export class ChatGateway {
   @WebSocketServer()
   server: Server;
 
-  constructor(private readonly chatService: ChatService) {}
-
-  @SubscribeMessage('createChat')
-  async create(@MessageBody() createChatDto: CreateChatDto) {
-    const newMessage = await this.chatService.createNewMessage(createChatDto);
-
-    this.server.emit('newMessage', newMessage);
-
-    return newMessage;
+  @SubscribeMessage('createMessage')
+  async emitNewMessage(@MessageBody() createMessageDto: CreateMessageDto) {
+    this.server.emit('newMessage', { ...createMessageDto });
   }
 }
