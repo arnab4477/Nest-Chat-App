@@ -1,0 +1,21 @@
+#root {
+  max-width: 1280px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.btn {
+  background-color: rgba(21, 85, 134, 0.669);
+  color: white;
+  padding: 5px;
+
+  border: none;
+  border-radius: 15%;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: rgb(21, 85, 134);
+}

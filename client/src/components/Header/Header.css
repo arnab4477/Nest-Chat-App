@@ -1,0 +1,13 @@
+.header {
+  width: 100vw;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  padding: 10px;
+
+  background-color: rgba(16, 8, 8, 0.687);
+}

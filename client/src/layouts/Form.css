@@ -1,0 +1,40 @@
+.form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  padding: 15px;
+
+  height: 60vh;
+  width: 70vw;
+  border-radius: 2%;
+
+  background-color: rgba(132, 10, 10, 0.762);
+  color: white;
+
+  box-shadow: 0 0 20px 2.5px rgba(0, 0, 0, 0.705);
+}
+
+.form-input {
+  background-color: transparent;
+  color: white;
+}
+
+@media (max-width: 550px) {
+  .form-container {
+    padding: 10px;
+
+    height: 40vh;
+    width: 80vw;
+  }
+
+  .form-input {
+    font-size: 20px;
+  }
+}

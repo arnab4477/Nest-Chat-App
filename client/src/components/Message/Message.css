@@ -1,0 +1,22 @@
+.message-container {
+  width: 100%;
+  padding: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-around;
+
+  background-color: rgba(6, 18, 108, 0.941);
+  border-radius: 15px;
+}
+
+.sender {
+  color: rgba(255, 255, 255, 0.416);
+  font-size: 14px;
+}
+
+.message-body {
+  color: white;
+  font-size: 20px;
+}

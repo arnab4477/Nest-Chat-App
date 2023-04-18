@@ -1,0 +1,58 @@
+.textbox-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100vw;
+}
+
+.input {
+  width: 85%;
+  height: 21px;
+
+  background-color: #333;
+  color: white;
+}
+
+.button {
+  width: 15%;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+
+  background-color: #222;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #444;
+}
+
+.button:disabled {
+  background-color: rgba(107, 107, 107, 0.839);
+  cursor: not-allowed;
+}
+
+.button-text {
+  color: white;
+  text-align: center;
+}
+
+@media (max-width: 550px) {
+  .input {
+    width: 80%;
+    height: 30px;
+    font-size: 20px;
+  }
+
+  .button {
+    width: 20%;
+    height: 35px;
+  }
+
+  .button-text {
+    font-size: 16px;
+  }
+}
