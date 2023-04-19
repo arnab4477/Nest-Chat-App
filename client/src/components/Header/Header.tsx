@@ -21,7 +21,7 @@ export const Header = () => {
 
   const handleLogOut = () => {
     setUser!(null);
-    window.localStorage.remove('user');
+    window.localStorage.clear();
   };
 
   if (!user) {
