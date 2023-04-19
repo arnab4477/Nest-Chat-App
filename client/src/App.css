@@ -6,6 +6,11 @@
   overflow-x: hidden;
 }
 
+body,
+html {
+  background-color: rgba(0, 0, 0, 0.453);
+}
+
 .btn {
   background-color: rgba(21, 85, 134, 0.669);
   color: white;

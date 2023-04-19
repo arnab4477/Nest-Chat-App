@@ -23,11 +23,13 @@ function App() {
     getAllMessages().then((messages) => {
       setChat!(messages);
     });
+  }, []);
 
+  useEffect(() => {
     // See if the user information is stored in the localstorage
-    const loggedInUser = window.localStorage.getItem('user') as UserStateType;
+    const loggedInUser = window.localStorage.getItem('user');
     if (loggedInUser) {
-      const user = JSON.parse(JSON.stringify(loggedInUser));
+      const user = JSON.parse(loggedInUser) as UserStateType;
       setUser!(user);
     } else {
       setUser!(null);
