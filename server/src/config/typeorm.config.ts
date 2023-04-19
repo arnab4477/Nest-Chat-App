@@ -3,7 +3,7 @@ import { Message, User } from 'src/entities';
 
 const typeOrmOptions: TypeOrmModuleOptions = {
   type: 'postgres',
-  host: 'localhost',
+  host: 'db',
   port: 5432,
   username: 'root',
   password: 'password',
